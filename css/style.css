@@ -1,0 +1,200 @@
+@font-face {
+    font-family: "Mona Sans";
+    src: url("../fonts/MonaS10-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --footer-green: #4aa372;
+    --sky-blye: #a1cae6; 
+    --text-dark: #1f2d24;
+    --text-on-green: #ffffff;
+
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-display: "Mona Sans", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overscroll-behavior-y: none;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background: var(--sky-blye);
+    overflow-x: hidden;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--text-on-green);
+    outline-offset: 3px;
+}
+
+/* --- Hero ---*/
+
+.hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 100svh;
+    min-height: 100dvh;
+    background-image: url("../images/StudyTokkiWebBackground.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: var(--sky-blye);
+}
+
+.hero__actions {
+    display: none;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 1rem;
+}
+
+/* --- this used to be the footer, but now it's nav ---*/
+
+.site-nav {
+    background-color: var(--footer-green);
+    color: var(--text-on-green);
+    padding: 2.5rem 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+}
+
+.site-nav__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+}
+
+.site-nav__links a {
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: var(--font-display);
+    color: var(--text-on-green);
+}
+
+.site-nav__studio {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: var(--font-display);
+}
+.site-nav__links a:hover,
+.site-nav__links a:focus-visible {
+    opacity: 0.7;
+}
+
+/* --- About --- */
+
+.about {
+    background-color: #7cb083;
+    color: var(--text-on-green);
+    font-family: var(--font-display);
+    padding: 3rem 1.5rem;
+}
+
+.about__mockup {
+    display: none;
+}
+
+.about__title {
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.about p {
+    line-height: 1.6;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .about__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .about__mockup {
+        display: block;
+        min-height: 600px;
+        background-image: url("../images/STmockupLeftGamePlay.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+/* --- Credits --- */
+
+.credits {
+    background-color: var(--footer-green);
+    color: var(--text-on-green);
+    font-family: var(--font-display);
+    padding: 3rem 1.5rem;
+}
+
+.credits__mockup {
+    display: none;
+}
+
+.credits__title {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.credits p {
+    line-height: 1.6;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .credits__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .credits__mockup {
+        display: block;
+        min-height: 600px;
+        background-image: url("../images/STmockupRightCustomize.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
